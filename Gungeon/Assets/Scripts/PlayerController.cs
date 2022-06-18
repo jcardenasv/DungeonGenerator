@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed;
     private float lastFire;
-    public float firedelay;
+    public float fireDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fireDelay = GameController.FireRate;
+        speed = GameController.MoveSpeed;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert = Input.GetAxis("ShootVertical");
-        if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + firedelay){
+        if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay){
             Shoot(shootHor, shootVert);
             lastFire = Time.time;
         }
