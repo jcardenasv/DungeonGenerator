@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemyState{
+    Idle,
     Wander,
     Follow,
     Die,
@@ -17,7 +18,7 @@ public enum EnemyType{
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
-    public EnemyState currState = EnemyState.Wander;
+    public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
     public float range;
     public float speed;
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
+    public bool notInRoom = false;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
     // Start is called before the first frame update
@@ -39,6 +41,9 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         switch(currState){
+            // case(EnemyState.Idle):
+            //     Idle();
+            // break;
             case(EnemyState.Wander):
                 Wander();
             break;
@@ -52,15 +57,18 @@ public class EnemyController : MonoBehaviour
                 Attack();
             break;
         }
-
-        if(IsPlayerInRange(range) && currState != EnemyState.Die){
-            currState = EnemyState.Follow;
-        }
-        else if (!IsPlayerInRange(range) && currState != EnemyState.Die){
-            currState = EnemyState.Wander;
-        }
-        if(Vector3.Distance(transform.position, player.transform.position) <=  attackRange){
-            currState = EnemyState.Attack;
+        if(!notInRoom){
+            if(IsPlayerInRange(range) && currState != EnemyState.Die){
+                currState = EnemyState.Follow;
+            }
+            else if (!IsPlayerInRange(range) && currState != EnemyState.Die){
+                currState = EnemyState.Wander;
+            }
+            if(Vector3.Distance(transform.position, player.transform.position) <=  attackRange){
+                currState = EnemyState.Attack;
+            }
+        } else {
+            currState = EnemyState.Idle;
         }
     }
 
