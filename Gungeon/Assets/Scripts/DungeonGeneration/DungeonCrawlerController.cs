@@ -26,11 +26,13 @@ public class DungeonCrawlerController : MonoBehaviour
             dungeonCrawlers.Add(new DungeonCrawler(Vector2Int.zero));
         }
 
-        int iterations = Random.Range(dungeonData.iterationMin, dungeonData.iterationMax);
+        int iterations = dungeonData.iteration;
+        int auxDir = dungeonData.direction;
 
         for(int i = 0; i < iterations; i++){
             foreach(DungeonCrawler dungeonCrawler in dungeonCrawlers){
-                Vector2Int newPos = dungeonCrawler.Move(directionMovementMap);
+                auxDir = (int) ((auxDir*dungeonData.iteration+i)%4);
+                Vector2Int newPos = dungeonCrawler.Move(directionMovementMap, auxDir);
                 positionsVisited.Add(newPos);
             }
         }

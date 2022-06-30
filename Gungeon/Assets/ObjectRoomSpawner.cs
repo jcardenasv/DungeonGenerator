@@ -25,7 +25,7 @@ public class ObjectRoomSpawner : MonoBehaviour
     }
 
     void SpawnObjects(RandomSpawner data){
-        int randomIteration = Random.Range(data.spawnerData.minSpawn, data.spawnerData.maxSpawn + 1);
+        int randomIteration = data.spawnerData.spawnNum;
         
         for(int i = 0; i < randomIteration; i++){
             int randomPos = Random.Range(0, grid.availablePoints.Count - 1);
