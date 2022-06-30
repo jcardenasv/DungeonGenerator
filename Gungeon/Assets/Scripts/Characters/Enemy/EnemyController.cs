@@ -17,6 +17,10 @@ public enum EnemyType{
 
 public class EnemyController : MonoBehaviour
 {
+    public AudioSource _audioSource;
+    public SpriteRenderer spriteRenderer;
+    public Sprite darkSprite;
+    public Sprite orangeSprite;    
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
@@ -105,6 +109,7 @@ public class EnemyController : MonoBehaviour
             switch(enemyType){
                 case(EnemyType.Melee):
                     GameController.DamagePlayer(1);
+                    spriteRenderer.sprite = darkSprite;
                     StartCoroutine(CoolDown());
                 break;
                 case(EnemyType.Ranged):
@@ -120,8 +125,10 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator CoolDown(){
         coolDownAttack = true;
+        _audioSource.Play();
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
+        spriteRenderer.sprite = orangeSprite;
     }
 
     public void Death(){
