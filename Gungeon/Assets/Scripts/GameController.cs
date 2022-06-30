@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     private static int maxHealth = 6;
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
-    private static float bulletSize = 0.5f;
+    private static float bulletSize = 0.1f;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
         }
 
         if(bootCollected && screwCollected){
-            FireRateChange(0.25f);
+            FireRateChange(0.05f);
         }
     }
 

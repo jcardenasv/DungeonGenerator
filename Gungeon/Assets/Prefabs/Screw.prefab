@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1455099057
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: 58339268c4128b047abbd754c460ed95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,5 +101,5 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 93c773fae8889d5498f150c1e7ab51c5, type: 3}
   healthChange: 0
   moveSpeedChange: 0
-  attackSpeedchange: 0.25
-  bulletSizeChange: 0.25
+  attackSpeedchange: 0.05
+  bulletSizeChange: 0.03
