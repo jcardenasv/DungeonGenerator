@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 42065284302991741}
   - component: {fileID: 42065284302991738}
   - component: {fileID: 42065284302991740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1455099057
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 58339268c4128b047abbd754c460ed95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
