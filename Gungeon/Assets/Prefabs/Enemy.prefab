@@ -100,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1455099057
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 01536a7d338fb984ba82cd1ac6abed63, type: 3}
   m_Color: {r: 0.6698113, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1930203465832725178
 BoxCollider2D:
   m_ObjectHideFlags: 0
