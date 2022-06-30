@@ -807,7 +807,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1094479493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   attackRange: 5
   bulletSpeed: 5
   coolDown: 2
+  notInRoom: 0
   bulletPrefab: {fileID: 7817201280043176976, guid: 5bb907f2681c817489f3e235834f157e, type: 3}
 --- !u!212 &1362599512
 SpriteRenderer:
