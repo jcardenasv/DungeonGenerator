@@ -82,6 +82,7 @@ public class GameController : MonoBehaviour
     }
 
     private static void KillPlayer(){
-
+        Debug.Log("Killing Player");
+        EndGameMenu.EndGame();
     }
 }
