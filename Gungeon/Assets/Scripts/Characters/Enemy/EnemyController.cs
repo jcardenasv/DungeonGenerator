@@ -132,9 +132,11 @@ public class EnemyController : MonoBehaviour
     }
 
     private IEnumerator CoolDown(){
+        coolDownAttack = true;
         _audioSource.Play();
         yield return new WaitForSeconds(coolDown);
         spriteRenderer.sprite = orangeSprite;
+        coolDownAttack = false;
     }
 
     public void Death(){
