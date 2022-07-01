@@ -125,13 +125,13 @@ public class RoomController : MonoBehaviour
         return loadedRooms.Find(item => item.X == x && item.Y == y);
     }
 
-    public string GetRandomRoomName(){
+    public string GetRandomRoomName(int num){
         string[] possibleRooms = new string[]{
             "Empty",
             "Basic1"
         };
 
-        return possibleRooms[Random.Range(0, possibleRooms.Length)];
+        return possibleRooms[num];
     }
 
     public void OnPlayerEnterRoom(Room room){
