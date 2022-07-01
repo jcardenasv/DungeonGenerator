@@ -1134,12 +1134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eac54dac94f9944bbb06614130a38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 8166810936983993359, guid: a476cd846777885418487cde1b21778b, type: 3}
+  itemObject: {fileID: 5521270278335855967, guid: addd7c28781e0f44aa7b4242fc20525c, type: 3}
   grid: {fileID: 1909001970}
-  spawnerData:
-  - name: ChaseEnemy
-    spawnerData: {fileID: 11400000, guid: a7bd2277c4ea6bc408d8eeee0579d2d6, type: 2}
-  - name: RandomItemSpawner
-    spawnerData: {fileID: 11400000, guid: 3abda4a865eb63c42bb3dbd2875da581, type: 2}
 --- !u!1 &1350205832
 GameObject:
   m_ObjectHideFlags: 0
