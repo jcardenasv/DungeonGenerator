@@ -139,8 +139,13 @@ public class EnemyController : MonoBehaviour
         coolDownAttack = false;
     }
 
-    public void Death(){
+    public void Death(bool boss = false)
+    {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
+        if (boss)
+        {
+            EndGameMenu.EndGame(true);
+        }
     }
 }
