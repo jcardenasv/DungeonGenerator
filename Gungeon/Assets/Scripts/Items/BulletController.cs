@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
     private Vector2 lastPos;
     private Vector2 curPos;
     private Vector2 playerPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +47,21 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(col.tag == "Boss" && !isEnemyBullet){
+            GameObject enemy = GameObject.FindGameObjectWithTag("Boss");
+            enemy.GetComponent<EnemyController>().bossHealth -= 1;
+            if (enemy.GetComponent<EnemyController>().bossHealth <= 0){
+                enemy.GetComponent<EnemyController>().Death();
+            }
+            Destroy(gameObject);
+        }
+
         if(col.tag == "Player" && isEnemyBullet){
             GameController.DamagePlayer(1);
             Destroy(gameObject);
         }
 
-        if(col.tag != "Player" && col.tag != "Enemy" && col.tag != "Stop"){
+        if(col.tag != "Player" && col.tag != "Enemy" && col.tag != "Boss" && col.tag != "Stop"){
             Destroy(gameObject);
         }
     }

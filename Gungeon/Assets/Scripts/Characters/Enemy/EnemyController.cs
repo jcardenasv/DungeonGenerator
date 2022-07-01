@@ -29,12 +29,17 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public float bulletSpeed;
     public float coolDown;
+    float _timer = 0;
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
     public bool notInRoom = false;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
+
+    public int bossHealth = 20;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +63,10 @@ public class EnemyController : MonoBehaviour
 
             break;
             case(EnemyState.Attack):
-                Attack();
+                _timer -= Time.deltaTime; 
+                if(_timer <= 0){
+                    Attack();
+                }
             break;
         }
         if(!notInRoom){
@@ -117,17 +125,15 @@ public class EnemyController : MonoBehaviour
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
-                    StartCoroutine(CoolDown());
+                    _timer = 0.8f;
                 break;
             }
         }
     }
 
     private IEnumerator CoolDown(){
-        coolDownAttack = true;
         _audioSource.Play();
         yield return new WaitForSeconds(coolDown);
-        coolDownAttack = false;
         spriteRenderer.sprite = orangeSprite;
     }
 
