@@ -27,6 +27,7 @@ public class CustomLevelMenu : MonoBehaviour
 
     public void InitCustomGame()
     {
+        GameController.SetDefaultParameters();
         string message = "";
         message = AssignValues();
         if (message != "")
