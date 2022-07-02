@@ -51,7 +51,7 @@ public class BulletController : MonoBehaviour
             GameObject enemy = GameObject.FindGameObjectWithTag("Boss");
             enemy.GetComponent<EnemyController>().bossHealth -= 1;
             if (enemy.GetComponent<EnemyController>().bossHealth <= 0){
-                enemy.GetComponent<EnemyController>().Death();
+                enemy.GetComponent<EnemyController>().Death(true);
             }
             Destroy(gameObject);
         }
