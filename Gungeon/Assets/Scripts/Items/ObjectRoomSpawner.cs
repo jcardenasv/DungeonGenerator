@@ -20,6 +20,10 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
         int enemiesNumber = Random.Range(1,6);
         int itemsNumber = Random.Range(0,2);
+        if (GameController.CurrentState == CreationStates.Custom) {
+            enemiesNumber = Random.Range(CustomLevelMenu.MinEnemies,CustomLevelMenu.MaxEnemies);
+            itemsNumber = Random.Range(CustomLevelMenu.MinDrops, CustomLevelMenu.MaxDrops);
+        }
         SpawnObjects(enemyObject, enemiesNumber);
         SpawnObjects(itemObject, itemsNumber);
     }

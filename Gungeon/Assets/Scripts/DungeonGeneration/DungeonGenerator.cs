@@ -25,6 +25,9 @@ public class DungeonGenerator : MonoBehaviour
             Random.InitState(GameController.Seed);
         }
         int rooms = Random.Range(10,20);
+        if (GameController.CurrentState == CreationStates.Custom) {
+            rooms = CustomLevelMenu.Rooms;
+        }
         positionsVisited = PositionsSelector(rooms);
         return positionsVisited;
     }
