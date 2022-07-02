@@ -56,6 +56,7 @@ public class EndGameMenu : MonoBehaviour
         IsGameEnded = false;
         EndGameMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        GameController.SetDefaultParameters();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }

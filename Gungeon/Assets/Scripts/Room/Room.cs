@@ -27,7 +27,6 @@ public class Room : MonoBehaviour
     void Start()
     {
         if(RoomController.instance == null){
-            Debug.Log("Estas en es escena equivocada");
             return;
         }
 

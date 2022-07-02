@@ -3099,6 +3099,7 @@ GameObject:
   - component: {fileID: 1068852256}
   - component: {fileID: 1068852255}
   - component: {fileID: 1068852254}
+  - component: {fileID: 1068852258}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3193,6 +3194,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1068852258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068852253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461f5ef751c7f874c82a85bf0cbeb6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1073603271 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1535503630009064407, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
@@ -4131,6 +4144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206956583}
+  - component: {fileID: 1206956584}
   m_Layer: 5
   m_Name: BySeedMenu
   m_TagString: Untagged
@@ -4162,6 +4176,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1206956584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206956582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1772a7b0218d51441b5f4928d5d11d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _seed: {fileID: 1091408821}
 --- !u!1 &1207721332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,6 +5349,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1206956583}
     m_Modifications:
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1206956584}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitGameBySeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BySeedMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535503630009064404, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1535503630009064406, guid: 4f94da18a06f54b4eaffb24dcdcd3d98, type: 3}
       propertyPath: m_Name
       value: GenerateLevelButton

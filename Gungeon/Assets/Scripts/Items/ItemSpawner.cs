@@ -22,6 +22,10 @@ public class ItemSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameController.CurrentState == CreationStates.BySeed)
+        {
+            Random.InitState(GameController.Seed);
+        }
         float pick = Random.value * totalWeight;
         int chosenIndex = 0;
         float cumulativeWeight = items[0].weight;

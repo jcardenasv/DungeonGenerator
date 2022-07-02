@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DungeonGenerator : MonoBehaviour
 {
-    public DungeonGenerationData dungeonGenerationData;
     private List<Vector2Int> dungeonRooms;
     public static List<Vector2Int> positionsVisited = new List<Vector2Int>();
     private static readonly List<Vector2Int> directions = new List<Vector2Int>{
@@ -16,13 +15,16 @@ public class DungeonGenerator : MonoBehaviour
     private int cont = 0;
     
     private void Start(){
-        dungeonRooms = GenerateDungeon(dungeonGenerationData);
+        dungeonRooms = GenerateDungeon();
         SpawnRooms(dungeonRooms);
     }
 
-    public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData){
+    public static List<Vector2Int> GenerateDungeon(){
+        if (GameController.CurrentState == CreationStates.BySeed)
+        {
+            Random.InitState(GameController.Seed);
+        }
         int rooms = Random.Range(10,20);
-        Debug.Log("Habitaciones: "+rooms);
         positionsVisited = PositionsSelector(rooms);
         return positionsVisited;
     }
@@ -59,7 +61,6 @@ public class DungeonGenerator : MonoBehaviour
         foreach(Vector2Int direction in directions)
         {
             Vector2Int adyacentPosition = selectedPosition + direction;
-            Debug.Log("Posición adyacente: "+adyacentPosition);
             adyacentPositions.Add(adyacentPosition);
         }
         return adyacentPositions;

@@ -4,34 +4,35 @@ using UnityEngine;
 
 public class ObjectRoomSpawner : MonoBehaviour
 {
-    [System.Serializable]
-    public struct RandomSpawner{
-        public string name;
-        public SpawnerData spawnerData;
-
-    }
-
+    [SerializeField] GameObject enemyObject;
+    [SerializeField] GameObject itemObject;
     public GridController grid;
-    public RandomSpawner[] spawnerData;
-
     void Start() {
-        // grid = GetComponentInChildren<GridController>();    
+
     }
 
     public void InitialiseObjectSpawning(){
-        foreach(RandomSpawner rs in spawnerData){
-            SpawnObjects(rs);
+        if (GameController.CurrentState == CreationStates.BySeed)
+        {
+            Random.InitState(GameController.TemporalSeed);
+            GameController.TemporalSeed = GameController.GetPseudorandomSeed();
+            Random.InitState(GameController.TemporalSeed);
         }
+        int enemiesNumber = Random.Range(1,6);
+        int itemsNumber = Random.Range(0,2);
+        SpawnObjects(enemyObject, enemiesNumber);
+        SpawnObjects(itemObject, itemsNumber);
     }
 
-    void SpawnObjects(RandomSpawner data){
-        int randomIteration = data.spawnerData.spawnNum;
+    void SpawnObjects(GameObject gameObject, int items){
         
-        for(int i = 0; i < randomIteration; i++){
+        for(int i = 0; i < items; i++){
+            if (grid.availablePoints.Count == 0) {
+                break;
+            }
             int randomPos = Random.Range(0, grid.availablePoints.Count - 1);
-            GameObject go = Instantiate(data.spawnerData.itemToSpawn, grid.availablePoints[randomPos], Quaternion.identity, transform) as GameObject;
+            GameObject go = Instantiate(gameObject, grid.availablePoints[randomPos], Quaternion.identity, transform) as GameObject;
             grid.availablePoints.RemoveAt(randomPos);
-            // Debug.Log("Spawned Object!");
         }
     }
 }
