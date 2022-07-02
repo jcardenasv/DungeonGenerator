@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 838772371324809003}
   - component: {fileID: 838772371324808996}
   - component: {fileID: 7886155067904700285}
-  - component: {fileID: 1991440059}
-  - component: {fileID: 592934114047020671}
+  - component: {fileID: 3447019645496975696}
+  - component: {fileID: 5053395579837177983}
   m_Layer: 9
   m_Name: RangedEnemy
   m_TagString: Boss
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 838772371324808997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.2451, y: -2.2882, z: 0}
-  m_LocalScale: {x: 1.7655, y: 1.9186, z: 1}
+  m_LocalScale: {x: 5, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 33288695518d7f546ac5e0dbc7d042f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4ae1438553220b46926edcb4692f03d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,24 +133,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1991440059
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838772371324808997}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2019512}
-  serializedVersion: 2
-  m_Radius: 0.596488
---- !u!58 &592934114047020671
-CircleCollider2D:
+--- !u!70 &3447019645496975696
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,6 +146,22 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.20959039}
-  serializedVersion: 2
-  m_Radius: 0.60313004
+  m_Offset: {x: 0.010357857, y: 0.00469923}
+  m_Size: {x: 0.5862433, y: 0.62089604}
+  m_Direction: 0
+--- !u!70 &5053395579837177983
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838772371324808997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010357857, y: 0.00469923}
+  m_Size: {x: 0.5862433, y: 0.62089604}
+  m_Direction: 0
