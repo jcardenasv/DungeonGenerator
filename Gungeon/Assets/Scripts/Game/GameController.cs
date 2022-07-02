@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum CreationStates 
+{
+    Default,
+    BySeed,
+    Custom,
+}
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -12,6 +18,9 @@ public class GameController : MonoBehaviour
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.1f;
+    private static int seed;
+    private static int temporalSeed;
+    private static CreationStates currentState = CreationStates.Default;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -22,7 +31,9 @@ public class GameController : MonoBehaviour
     public static float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate { get => fireRate; set => fireRate = value; }
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
-
+    public static int Seed { get => seed; set => seed = value; }
+    public static int TemporalSeed { get => temporalSeed; set => temporalSeed = value; }
+    public static CreationStates CurrentState { get => currentState; set => currentState = value; }
     public Text healthText;
 
     // Start is called before the first frame update
@@ -82,7 +93,25 @@ public class GameController : MonoBehaviour
     }
 
     private static void KillPlayer(){
-        Debug.Log("Killing Player");
         EndGameMenu.EndGame();
+    }
+
+    public static void SetDefaultParameters()
+    {
+        health = 6;
+        maxHealth = 6;
+        moveSpeed = 5f;
+        fireRate = 0.5f;
+        bulletSize = 0.1f;
+        int randomSeed = (int) System.DateTime.Now.Ticks;
+        seed = randomSeed;
+        temporalSeed = randomSeed;
+        Random.InitState(randomSeed);
+        currentState = CreationStates.Default;
+    }
+
+    public static int GetPseudorandomSeed()
+    {
+        return Random.Range(-999999999,999999999);
     }
 }

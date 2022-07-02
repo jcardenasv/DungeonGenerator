@@ -12,12 +12,16 @@ public class ObjectRoomSpawner : MonoBehaviour
     }
 
     public void InitialiseObjectSpawning(){
-
+        if (GameController.CurrentState == CreationStates.BySeed)
+        {
+            Random.InitState(GameController.TemporalSeed);
+            GameController.TemporalSeed = GameController.GetPseudorandomSeed();
+            Random.InitState(GameController.TemporalSeed);
+        }
         int enemiesNumber = Random.Range(1,6);
         int itemsNumber = Random.Range(0,2);
         SpawnObjects(enemyObject, enemiesNumber);
         SpawnObjects(itemObject, itemsNumber);
-
     }
 
     void SpawnObjects(GameObject gameObject, int items){

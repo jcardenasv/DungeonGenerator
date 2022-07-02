@@ -7,6 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     {
+        
+        GameController.SetDefaultParameters();
+        Debug.Log(GameController.Seed);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
