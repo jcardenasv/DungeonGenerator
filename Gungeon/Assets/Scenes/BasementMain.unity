@@ -1049,7 +1049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730bec82183b1b14d8d4e1a4a6e0464d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonGenerationData: {fileID: 11400000, guid: 81ce92f87533e314bb5e029898ba3268, type: 2}
 --- !u!1001 &905208618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1638,7 +1637,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0bda0458b1aa404e920c202bdb95589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1843637ea4989294aa986443dbc2734a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1658,7 +1657,7 @@ Transform:
   m_GameObject: {fileID: 1213102452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -1895,6 +1894,7 @@ MonoBehaviour:
   coolDown: 2
   notInRoom: 0
   bulletPrefab: {fileID: 7817201280043176976, guid: 5bb907f2681c817489f3e235834f157e, type: 3}
+  bossHealth: 20
 --- !u!212 &1362599512
 SpriteRenderer:
   m_ObjectHideFlags: 0
